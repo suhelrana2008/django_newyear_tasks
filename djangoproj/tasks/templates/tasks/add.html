@@ -1,0 +1,11 @@
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h2>Plans for the new year!</h2>
+    <form action="{% url 'tasks:add' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+    <a href="{% url 'tasks:index' %}">Back to view plans list!</a>
+{% endblock %}    
